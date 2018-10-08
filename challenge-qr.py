@@ -1,4 +1,4 @@
-# extracts and shows QR code
+# extracts and saves QR code
 # donations to: 1Fnv5AjLoZiCQCypVwPFjW2pimS9TgZ5xZ
 
 from PIL import Image
@@ -10,7 +10,7 @@ pix = im.load()
 count = 0
 aChannelBit = []
 width = 85
-for x in range(1431, 1514):
+for x in range(1429, 1514):
 	for y in range(913, 998):
 		count = count + 1
 		aChannelBit.append((pix[x,y][3]%2 +1) % 2)
@@ -30,5 +30,6 @@ for i in range(img.size[0]):
 		else:
 			pixels[i,j] = (0,0,0)
 
-img.show()
+
+img.save('qr.png')
 
