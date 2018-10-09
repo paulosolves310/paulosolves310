@@ -1,5 +1,5 @@
 # base64 string from line 310 alpha channel which decodes to openssl salted data
-# donations to: 1Fnv5AjLoZiCQCypVwPFjW2pimS9TgZ5xZ
+# tips to: 1Fnv5AjLoZiCQCypVwPFjW2pimS9TgZ5xZ
 
 from PIL import Image
 import sys
