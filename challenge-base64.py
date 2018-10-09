@@ -5,14 +5,14 @@ from PIL import Image
 import sys
 import base64
 
-im = Image.open('challenge.png')
-pix = im.load()
+challengeImg = Image.open('challenge.png')
+pixels = challengeImg.load()
 
 count = 0
 aChannelByte = 0
 aChannelBytes = []
 for x in range(2944):
-	aChannelByte = aChannelByte | ((pix[x,310][3]%2) << 7-count)
+	aChannelByte = aChannelByte | ((pixels[x,310][3]%2) << 7-count)
 	count += 1
 	if(count == 8):
 		aChannelBytes.append(aChannelByte)
