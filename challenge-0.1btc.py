@@ -12,13 +12,12 @@ for i in range(len(encrypted)):
 		decrypted.append(segment)
 		segment = ""
 	
-print("decrypted table:" + str(decrypted))
+print("decrypted table:" + str(decrypted) + "\n")
 
 f = open('english.txt', 'r')
-words = f.readlines()
+words = f.read().splitlines()
 f.close()
 
 
 for i in range(6,len(decrypted)):
-	print(decrypted[i])
 	print(words[int(decrypted[i],16)-1])
