@@ -7,24 +7,19 @@ import sys
 challengeImg = Image.open('challenge.png')
 pixels = challengeImg.load()
 
-count = 0
 aChannelBit = []
-width = 85
 for x in range(1429, 1514):
 	for y in range(913, 998):
-		count = count + 1
 		aChannelBit.append((pixels[x,y][3]%2 +1) % 2)
 
-#pad
-aChannelBit.extend([0]*200)
 
+width = 85
 height = int(len(aChannelBit)/width)
-
 qrImg = Image.new('RGB', (width,height), 'white')
 qrPixels = qrImg.load()
 
-for i in range(qrImg.size[0]):   
-	for j in range(qrImg.size[1]):
+for i in range(width):   
+	for j in range(height):
 		if aChannelBit[j + width*i] == 1:
 			qrPixels[i,j] = (255,255,255)
 		else:
